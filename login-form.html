@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UlisesGutierrez-IS183 Midterm</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"
+</head>
+<body>
+      <div class="wrapper login-page">
+        <section class="content-bottom one-column">
+            <header class="main-header box-shadow">
+                <img class="logo1" src="./images/gallery/logo.jpg" alt="logo">
+                <img class="carpartslogo" src="./images/gallery/carpartslogo.jpg" alt="Carpartslogo">
+            </header>
+            <article class="main-content one-column">
+                <div class="login-form">
+                    <h1 class="login-h1">Login</h1>
+                    <label for="username">Username</label>
+                    <input class="login-input" type="text" id="username">
+                    <label for="password">Password</label>
+                    <input class="login-input" type="password" id="password">
+                    <button onclick="login()" id="btn-login" class="login-button">LOG ME IN!</button>
+                    <div id="error-container">
+                        <p id="error-text" class="error-message"></p>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+        <footer class="footer box-shadow">
+            <p class="copyright">
+                 (c) Created by Ulises Gutierrez
+             </p>
+        </footer>
+    </div>
+    <script>
+        function login() {
+
+
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let errorContainer = document.getElementById('error-container');
+            let errorText = document.getElementById('error-text');
+
+            if(username == 'username' && password == 'password') {
+                location.href = './home/home.html';
+            } else {
+                errorContainer.style.display = 'block';
+                errorText.style.display = 'block';
+                errorText.innerHTML = 'Error please try again...';
+
+               let handle = setInterval(() => {
+                    errorContainer.style.display = 'none';
+                    clearInterval(handle);
+                },2000);
+            }
+
+
+            //alert(password);
+        }
+    </script>
+</body>
+</html>
